@@ -18,7 +18,7 @@ class CryptoConverter:
              raise ConvertionException(f'Не удалось обработать валюту {quote}, проверьте и повторите ввод.')
     
         try:
-            base_ticker = keys [base]
+            base_ticker = keys[base]
         except KeyError:
             raise ConvertionException(f'Не удалось обработать валюту {base}, проверьте и повторите ввод.')
 
