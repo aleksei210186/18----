@@ -23,8 +23,10 @@ def values(message: telebot.types.Message):
     try:
         values = message.text.split(' ')
 
-        if len(values) != 3:
+        if len(values) > 3:
             raise ConvertionException('Cлишком много параметров.')
+        elif len(values) < 3:
+            raise ConvertionException('Cлишком мало параметров.')
 
         quote, base, amount = values
         total_base = CryptoConverter.convert(quote, base, amount)
